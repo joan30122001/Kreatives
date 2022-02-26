@@ -1,0 +1,71 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block stylepage %}
+    <link rel="stylesheet" href="{% static 'css/template.css' %}">
+{% endblock stylepage %}
+
+
+{% block content %}
+<div class="body">
+    <h3 style="font-size: 3em"> Différents Template pour Requêtes </h3>
+    <div class="template">
+        <div class="container">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <span class="stars"></span>
+                        {% comment %} <h2 class="java">Java</h2> {% endcomment %}
+                        <p class="java">Rectification de notes.</p>
+                        <form action="{% url 'template:creer_requete' %}">
+                            <input type="submit" value="Creer une Requête">
+                        <form>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <h2>01</h2>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <span class="stars"></span>
+                        {% comment %} <h2 class="python">Python</h2> {% endcomment %}
+                        <p class="java">Absence de notes.</p>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <h2>02</h2>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <span class="stars"></span>
+                        {% comment %} <h2 class="cSharp">C#</h2> {% endcomment %}
+                        <p class="java">Nom ou Matricule mal écrit.</p>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <h2>03</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <span class="stars"></span>
+                        {% comment %} <h2 class="cSharp">C#</h2> {% endcomment %}
+                        <p class="java">Absence de payement.</p>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <h2>04</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

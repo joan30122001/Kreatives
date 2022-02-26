@@ -1,0 +1,97 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block stylepage %}
+    <link rel="stylesheet" href="{% static 'css/requete.css' %}">
+{% endblock stylepage %}
+
+
+{% block content %}
+    <div class="container" >
+        <div class="head">
+            <div>
+                <p>Nom: <span id="tonDiv" contenteditable="false">XXXXXX</span></p>
+                <p>Prénom: <span id="tonDivs" contenteditable="false">XXXXXX</span></p>
+                <p>Filière: <span id="tonDivs1" contenteditable="false">XXXXXX</span></p>
+                <p>Niveau: <span id="tonDivs2" contenteditable="false">XXXXXX</span></p>
+                <p>Matricule: <span id="tonDivs3" contenteditable="false">XXXXXX</span></p>
+                <p>Téléphone: <span id="tonDivs4" contenteditable="false">XXXXXX</span></p>
+            </div>
+            <div></div>
+            <div>
+                <p>date: Le, <span id="tonDivs5" contenteditable="false">XXXXX XXXXX XXXX</span></p>
+            </div>
+        </div>
+        <div class="respo">
+            <div></div>
+            <div></div>
+            <div>
+                <p>A <span id="tonDivs6" contenteditable="false">XXXXXXXXXX</span></p>
+            </div>
+        </div>
+        <div class="objet">
+            <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">XXXXXXXXXXXXXXXXXXXX</span></div>
+            {% comment %} <div></div> {% endcomment %}
+            <div></div>
+        </div><br>
+        <div class="personel">
+            <div><p>Madame, Monsieur</p></div>
+            {% comment %} <div></div> {% endcomment %}
+            <div></div>
+        </div>
+        <div>
+            <p>
+                Le <span id="tonDivs8" contenteditable="false">XXXXXX</span> dernier, j'ai passé l'examen de <span id="tonDivs9" contenteditable="false">XXXXXX</span>. Je me permet de vous solliciter car après perception ,
+                ma note obtenue en <span id="tonDivs10" contenteditable="false">XXXXXX</span> a retenu mon attention.<br><br>
+                Ce résultat m'ayant surpris car durant toute ma scolarité j'ai toujours eu d'excellente notes en cette matière,
+                j'ai alors demandé au responsable de cette matière M. / Mme <span id="tonDivs11" contenteditable="false">XXXXXX</span> de m'adresser la copie corrigée.<br><br>
+                Une fois reçu, l'étude de la copie révèle qu'il y a bien eu erreur dans le comptage des points qui, après
+                calcul modifierait ma note de <span id="tonDivs12" contenteditable="false">XXXXX</span> à <span id="tonDivs13" contenteditable="false">XXXXX</span>.<br>
+                Cette incidence est des plus importantes car elle me permettrait <span id="tonDivs14" contenteditable="false">XXXXXX</span>. C'est pourquoi je vous serais reconnaissant
+                de bien vouloir réviser ma note ici contestée.<br><br>
+                Dans l'attente d'une réponse de votre part qui, je l'espère, sera favorable, je vous prie d'agréer M. /Mme
+                mes plus sincères salutations.<br><br>
+                Cordialement,
+            </p>
+        </div>
+        <br><br>
+        <button id="bouton1">
+            <span style="color:red;">Editer</span>/<span style="color:blue;">Figer</span>
+        </button>
+    </div>
+    <br><br>
+    <script>
+        var tab=new Array();
+        tab[0]="#tonDiv";
+        tab[1]="#tonDivs";
+        tab[2]="#tonDivs1";
+        tab[3]="#tonDivs2";
+        tab[4]="#tonDivs3";
+        tab[5]="#tonDivs4";
+        tab[6]="#tonDivs5";
+        tab[7]="#tonDivs6";
+        tab[8]="#tonDivs7";
+        tab[9]="#tonDivs8";
+        tab[10]="#tonDivs9";
+        tab[11]="#tonDivs10";
+        tab[12]="#tonDivs11";
+        tab[13]="#tonDivs12";
+        tab[14]="#tonDivs13";
+        tab[15]="#tonDivs14";
+        var length = tab.length;
+
+        document.querySelector("#bouton1").onclick = function() {
+            for (var i = 0; i < length; i++){ 
+                monObj=document.querySelector(tab[i]);
+                if (monObj.contentEditable == "false"){
+                    monObj.contentEditable = true;
+                    monObj.style.border="2px solid red";
+                } 
+                else {
+                    monObj.contentEditable = false;
+                    monObj.style.border="2px solid blue";
+                }
+            }
+        };
+    </script>
+{% endblock content %}
