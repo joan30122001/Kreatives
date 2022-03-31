@@ -58,6 +58,14 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "django.db.models.deletion",
         "kind": 6,
         "isExtraImport": true,
@@ -97,6 +105,22 @@
         "description": "django.contrib",
         "isExtraImport": true,
         "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -140,6 +164,14 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -157,6 +189,14 @@
     },
     {
         "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -189,6 +229,14 @@
     },
     {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -403,7 +451,7 @@
         "kind": 5,
         "importPath": "requete.settings",
         "description": "requete.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'account',\n    'widget_tweaks',\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'account',\n    'widget_tweaks',\n    'template',",
         "detail": "requete.settings",
         "documentation": {}
     },
@@ -529,7 +577,7 @@
         "kind": 5,
         "importPath": "requete.urls",
         "description": "requete.urls",
-        "peekOfCode": "urlpatterns = [\n    path('',index, name='index'),\n    path('admin/', admin.site.urls),\n    path('account/', include('account.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('',index, name='index'),\n    path('admin/', admin.site.urls),\n    path('account/', include('account.urls')),\n    path('template/', include('template.urls')),\n]",
         "detail": "requete.urls",
         "documentation": {}
     },
@@ -540,6 +588,51 @@
         "description": "requete.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "requete.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateConfig",
+        "kind": 6,
+        "importPath": "template.apps",
+        "description": "template.apps",
+        "peekOfCode": "class TemplateConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'template'",
+        "detail": "template.apps",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "template.urls",
+        "description": "template.urls",
+        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n]",
+        "detail": "template.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "template.urls",
+        "description": "template.urls",
+        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n]",
+        "detail": "template.urls",
+        "documentation": {}
+    },
+    {
+        "label": "template",
+        "kind": 2,
+        "importPath": "template.views",
+        "description": "template.views",
+        "peekOfCode": "def template(request):\n    return render(request, 'template.html')\ndef creer_requete(request):\n    return render(request, 'creer-requete.html')",
+        "detail": "template.views",
+        "documentation": {}
+    },
+    {
+        "label": "creer_requete",
+        "kind": 2,
+        "importPath": "template.views",
+        "description": "template.views",
+        "peekOfCode": "def creer_requete(request):\n    return render(request, 'creer-requete.html')",
+        "detail": "template.views",
         "documentation": {}
     }
 ]
