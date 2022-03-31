@@ -7,58 +7,67 @@
 
 
 {% block content %}
-    <div class="container" >
-        <div class="head">
-            <div>
-                <p>Nom: <span id="tonDiv" contenteditable="false">XXXXXX</span></p>
-                <p>Prénom: <span id="tonDivs" contenteditable="false">XXXXXX</span></p>
-                <p>Filière: <span id="tonDivs1" contenteditable="false">XXXXXX</span></p>
-                <p>Niveau: <span id="tonDivs2" contenteditable="false">XXXXXX</span></p>
-                <p>Matricule: <span id="tonDivs3" contenteditable="false">XXXXXX</span></p>
-                <p>Téléphone: <span id="tonDivs4" contenteditable="false">XXXXXX</span></p>
+        <div class="container" >
+            {% csrf_token %}
+            <div class="head">
+                <div>
+                    <p>Nom: <span id="tonDiv" contenteditable="false">XXXXXX</span></p>
+                    <p>Prénom: <span id="tonDivs" contenteditable="false">XXXXXX</span></p>
+                    <p>Filière: <span id="tonDivs1" contenteditable="false">XXXXXX</span></p>
+                    <p>Niveau: <span id="tonDivs2" contenteditable="false">XXXXXX</span></p>
+                    <p>Matricule: <span id="tonDivs3" contenteditable="false">XXXXXX</span></p>
+                    <p>Téléphone: <span id="tonDivs4" contenteditable="false">XXXXXX</span></p>
+                </div>
+                <div></div>
+                <div>
+                    <p>date: Le, <span id="tonDivs5" contenteditable="false">XXXXX XXXXX XXXX</span></p>
+                </div>
             </div>
-            <div></div>
-            <div>
-                <p>date: Le, <span id="tonDivs5" contenteditable="false">XXXXX XXXXX XXXX</span></p>
+            <div class="respo">
+                <div></div>
+                <div></div>
+                <div>
+                    <p>A <span id="tonDivs6" contenteditable="false">XXXXXXXXXX</span></p>
+                </div>
             </div>
-        </div>
-        <div class="respo">
-            <div></div>
-            <div></div>
-            <div>
-                <p>A <span id="tonDivs6" contenteditable="false">XXXXXXXXXX</span></p>
+            <div class="objet">
+                <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">XXXXXXXXXXXXXXXXXXXX</span></div>
+                
+                <div></div>
+            </div><br>
+            <div id="contenu">
+                <div class="personel">
+                    <div><p>Madame, Monsieur</p></div>
+                    
+                    <div></div>
+                </div>
+                <div>
+                    <p>
+                        Le <span id="tonDivs8" contenteditable="false">XXXXXX</span> dernier, j'ai passé l'examen de <span id="tonDivs9" contenteditable="false">XXXXXX</span>. Je me permet de vous solliciter car après perception ,
+                        ma note obtenue en <span id="tonDivs10" contenteditable="false">XXXXXX</span> a retenu mon attention.<br><br>
+                        Ce résultat m'ayant surpris car durant toute ma scolarité j'ai toujours eu d'excellente notes en cette matière,
+                        j'ai alors demandé au responsable de cette matière M. / Mme <span id="tonDivs11" contenteditable="false">XXXXXX</span> de m'adresser la copie corrigée.<br><br>
+                        Une fois reçu, l'étude de la copie révèle qu'il y a bien eu erreur dans le comptage des points qui, après
+                        calcul modifierait ma note de <span id="tonDivs12" contenteditable="false">XXXXX</span> à <span id="tonDivs13" contenteditable="false">XXXXX</span>.<br>
+                        Cette incidence est des plus importantes car elle me permettrait <span id="tonDivs14" contenteditable="false">XXXXXX</span>. C'est pourquoi je vous serais reconnaissant
+                        de bien vouloir réviser ma note ici contestée.<br><br>
+                        Dans l'attente d'une réponse de votre part qui, je l'espère, sera favorable, je vous prie d'agréer M. /Mme
+                        mes plus sincères salutations.<br><br>
+                        Cordialement,
+                    </p>
+                </div>
             </div>
+            <br><br>
+            <button id="bouton1">
+                <span style="color:red;">Editer</span>/<span style="color:blue;">Figer</span>
+            </button>
+            {% comment %} <button id="btna" class="btn btn-primary">Enregistrer</button> {% endcomment %}
+            <input id="fetch-call" type="submit" value="Enregistrer">
         </div>
-        <div class="objet">
-            <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">XXXXXXXXXXXXXXXXXXXX</span></div>
-            {% comment %} <div></div> {% endcomment %}
-            <div></div>
-        </div><br>
-        <div class="personel">
-            <div><p>Madame, Monsieur</p></div>
-            {% comment %} <div></div> {% endcomment %}
-            <div></div>
-        </div>
-        <div>
-            <p>
-                Le <span id="tonDivs8" contenteditable="false">XXXXXX</span> dernier, j'ai passé l'examen de <span id="tonDivs9" contenteditable="false">XXXXXX</span>. Je me permet de vous solliciter car après perception ,
-                ma note obtenue en <span id="tonDivs10" contenteditable="false">XXXXXX</span> a retenu mon attention.<br><br>
-                Ce résultat m'ayant surpris car durant toute ma scolarité j'ai toujours eu d'excellente notes en cette matière,
-                j'ai alors demandé au responsable de cette matière M. / Mme <span id="tonDivs11" contenteditable="false">XXXXXX</span> de m'adresser la copie corrigée.<br><br>
-                Une fois reçu, l'étude de la copie révèle qu'il y a bien eu erreur dans le comptage des points qui, après
-                calcul modifierait ma note de <span id="tonDivs12" contenteditable="false">XXXXX</span> à <span id="tonDivs13" contenteditable="false">XXXXX</span>.<br>
-                Cette incidence est des plus importantes car elle me permettrait <span id="tonDivs14" contenteditable="false">XXXXXX</span>. C'est pourquoi je vous serais reconnaissant
-                de bien vouloir réviser ma note ici contestée.<br><br>
-                Dans l'attente d'une réponse de votre part qui, je l'espère, sera favorable, je vous prie d'agréer M. /Mme
-                mes plus sincères salutations.<br><br>
-                Cordialement,
-            </p>
-        </div>
-        <br><br>
-        <button id="bouton1">
-            <span style="color:red;">Editer</span>/<span style="color:blue;">Figer</span>
-        </button>
-    </div>
+        {% comment %} <p id="operation">
+
+</p> {% endcomment %}
+        {% comment %} <button id="btna" class="btn btn-primary">Enregistrer</button> {% endcomment %}
     <br><br>
     <script>
         var tab=new Array();
@@ -94,4 +103,37 @@
             }
         };
     </script>
+
+
+    <script>
+        document.querySelector("#fetch-call").addEventListener("click", event => {
+            event.preventDefault();
+        
+            let form = new FormData();
+            
+            form.append("first_name", document.querySelector("#tonDiv").innerText);
+            form.append("last_name", document.querySelector("#tonDivs").innerText);
+            form.append("ue", document.querySelector("#tonDivs1").innerText);
+            form.append("level", document.querySelector("#tonDivs2").innerText);
+            form.append("mat", document.querySelector("#tonDivs3").innerText);
+            form.append("phone", document.querySelector("#tonDivs4").innerText);
+            form.append("date", document.querySelector("#tonDivs5").innerText);
+            form.append("respo", document.querySelector("#tonDivs6").innerText);
+            form.append("objet", document.querySelector("#tonDivs7").innerText);
+            form.append("description", document.querySelector("#contenu").innerText);
+        
+            //let csrfTokenValue = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            let request = new Request("{% url 'template:operation_requete' %}", {method: 'POST',
+                                                            body: form,
+                                                            //headers: {"X-CSRFToken": csrfTokenValue}
+                                                            })
+            fetch(request)
+                .then(response => response.json())
+                .then(result => {
+                    let resultParagraph = document.querySelector("#operation");
+                    resultParagraph.innerHTML = result["operation_result"];
+                })
+        })
+    </script>
+
 {% endblock content %}

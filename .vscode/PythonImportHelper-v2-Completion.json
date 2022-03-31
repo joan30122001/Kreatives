@@ -58,6 +58,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -282,6 +298,22 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
         "documentation": {}
     },
     {
@@ -591,6 +623,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "template.migrations.0001_initial",
+        "description": "template.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Template',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('first_name', models.CharField(max_length=255)),",
+        "detail": "template.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "TemplateConfig",
         "kind": 6,
         "importPath": "template.apps",
@@ -600,11 +641,20 @@
         "documentation": {}
     },
     {
+        "label": "Template",
+        "kind": 6,
+        "importPath": "template.models",
+        "description": "template.models",
+        "peekOfCode": "class Template(models.Model):\n    first_name = models.CharField(max_length = 255)\n    last_name = models.CharField(max_length = 255)\n    ue = models.CharField(max_length = 255)\n    level = models.CharField(max_length = 255)\n    mat = models.CharField(max_length = 7)\n    phone = models.CharField(max_length = 255)\n    date = models.CharField(max_length = 255)\n    respo = models.CharField(max_length = 255)\n    objet = models.CharField(max_length = 255)",
+        "detail": "template.models",
+        "documentation": {}
+    },
+    {
         "label": "app_name",
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n]",
+        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -613,7 +663,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -622,7 +672,7 @@
         "kind": 2,
         "importPath": "template.views",
         "description": "template.views",
-        "peekOfCode": "def template(request):\n    return render(request, 'template.html')\ndef creer_requete(request):\n    return render(request, 'creer-requete.html')",
+        "peekOfCode": "def template(request):\n    return render(request, 'template.html')\ndef creer_requete(request):\n    return render(request, 'creer-requete.html')\n@csrf_exempt\ndef operation_requete(request):\n    a = request.POST.get(\"first_name\")\n    b = request.POST.get(\"last_name\")\n    c = request.POST.get(\"ue\")\n    d = request.POST.get(\"level\")",
         "detail": "template.views",
         "documentation": {}
     },
@@ -631,7 +681,16 @@
         "kind": 2,
         "importPath": "template.views",
         "description": "template.views",
-        "peekOfCode": "def creer_requete(request):\n    return render(request, 'creer-requete.html')",
+        "peekOfCode": "def creer_requete(request):\n    return render(request, 'creer-requete.html')\n@csrf_exempt\ndef operation_requete(request):\n    a = request.POST.get(\"first_name\")\n    b = request.POST.get(\"last_name\")\n    c = request.POST.get(\"ue\")\n    d = request.POST.get(\"level\")\n    e = request.POST.get(\"mat\")\n    f = request.POST.get(\"phone\")",
+        "detail": "template.views",
+        "documentation": {}
+    },
+    {
+        "label": "operation_requete",
+        "kind": 2,
+        "importPath": "template.views",
+        "description": "template.views",
+        "peekOfCode": "def operation_requete(request):\n    a = request.POST.get(\"first_name\")\n    b = request.POST.get(\"last_name\")\n    c = request.POST.get(\"ue\")\n    d = request.POST.get(\"level\")\n    e = request.POST.get(\"mat\")\n    f = request.POST.get(\"phone\")\n    g = request.POST.get(\"date\")\n    h = request.POST.get(\"respo\")\n    i = request.POST.get(\"objet\")",
         "detail": "template.views",
         "documentation": {}
     }
