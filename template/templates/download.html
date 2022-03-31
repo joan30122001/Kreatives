@@ -1,0 +1,48 @@
+{% extends '_partials/base.html' %}
+{% load static %}
+
+{% block stylepage %}
+    <link rel="stylesheet" href="{% static 'css/download.css' %}">
+{% endblock stylepage %}
+
+
+{% block content %}
+    <br>
+    
+    {% comment %} <br>
+    <div class="row text-center ">
+        <div class="col-md-6">
+            <h4>{{ element.objet }}</h4>
+        </div>
+        <div class="col-md-6"> 
+            <a href="{{ element.id }}" class="btn btn-warning ">Telecharger</a>
+        </div>
+    </div> 
+    <br> {% endcomment %}
+
+
+
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+        <table class="table table-bordered table-striped mb-0">
+            <thead>
+                <th scope="col">OBJET</th>
+                <th scope="col">FICHIER</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+            {% for element in template %}
+                <tr>
+                    <td>{{ element.objet }}</td>
+                    <td style="width: 400px"><a href="{{ element.id }}" style="width: 370px; font-size: 15px" class="btn btn-primary">Telecharger</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            
+        </table>
+        <p>OUIIIIIIIII</p>
+    </div>
+    <br>
+    
+{% endblock content %}
