@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Template
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from  . import models
+import pdfkit
+from django.template.loader import get_template
+from django.http.response import HttpResponse
+import io
 
 
 def template(request):

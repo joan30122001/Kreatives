@@ -268,6 +268,14 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "CreateView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
@@ -314,6 +322,40 @@
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "pdfkit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pdfkit",
+        "description": "pdfkit",
+        "detail": "pdfkit",
+        "documentation": {}
+    },
+    {
+        "label": "get_template",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http.response",
+        "description": "django.http.response",
+        "isExtraImport": true,
+        "detail": "django.http.response",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
         "documentation": {}
     },
     {
@@ -654,7 +696,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n    path('<int:id>', views.generer_requete, name='generer_requete'),\n]",
+        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n    path('<int:id>', views.generer_requete, name='generer_requete'),\n    path('download',views.download, name='download'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -663,7 +705,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n    path('<int:id>', views.generer_requete, name='generer_requete'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n    path('<int:id>', views.generer_requete, name='generer_requete'),\n    path('download',views.download, name='download'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },

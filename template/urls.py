@@ -9,4 +9,5 @@ urlpatterns = [
     path('operation_requete/',views.operation_requete, name='operation_requete'),
     path('preview_requete/',views.preview_requete, name='preview_requete'),
     path('<int:id>', views.generer_requete, name='generer_requete'),
+    path('download',views.download, name='download'),
 ]
