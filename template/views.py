@@ -42,3 +42,33 @@ def operation_requete(request):
     )
 
     return JsonResponse({"operation_result": f"{template.first_name} - {template.last_name} - {template.ue} - {template.level} - {template.mat} - {template.phone} - {template.date} - {template.respo} - {template.objet} - {template.description}"})
+
+
+
+def preview_requete(request):
+    templates = Template.objects.all()[:1]
+    for template in templates:
+        first_name = template.first_name,
+        last_name = template.last_name,
+        ue = template.ue,
+        level = template.level,
+        mat = template.mat,
+        phone = template.phone,
+        date = template.date,
+        respo = template.respo,
+        objet = template.objet,
+        description = template.description
+
+    return render(request, 'preview.html', {
+        'first_name':first_name, 
+        'last_name':last_name, 
+        'ue':ue, 
+        'mat':mat, 
+        'mat':mat, 
+        'level':level, 
+        'phone':phone,
+        'date':date, 
+        'respo':respo, 
+        'objet':objet,
+        'description':description
+    })

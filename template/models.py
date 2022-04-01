@@ -13,3 +13,6 @@ class Template(models.Model):
     respo = models.CharField(max_length = 255)
     objet = models.CharField(max_length = 255)
     description = models.TextField()
+
+    def __str__(self):
+        return self.mat 

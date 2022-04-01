@@ -654,7 +654,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n]",
+        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -663,7 +663,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -691,6 +691,15 @@
         "importPath": "template.views",
         "description": "template.views",
         "peekOfCode": "def operation_requete(request):\n    a = request.POST.get(\"first_name\")\n    b = request.POST.get(\"last_name\")\n    c = request.POST.get(\"ue\")\n    d = request.POST.get(\"level\")\n    e = request.POST.get(\"mat\")\n    f = request.POST.get(\"phone\")\n    g = request.POST.get(\"date\")\n    h = request.POST.get(\"respo\")\n    i = request.POST.get(\"objet\")",
+        "detail": "template.views",
+        "documentation": {}
+    },
+    {
+        "label": "preview_requete",
+        "kind": 2,
+        "importPath": "template.views",
+        "description": "template.views",
+        "peekOfCode": "def preview_requete(request):\n    templates = Template.objects.all()[:1]\n    for template in templates:\n        first_name = template.first_name,\n        last_name = template.last_name,\n        ue = template.ue,\n        level = template.level,\n        mat = template.mat,\n        phone = template.phone,\n        date = template.date,",
         "detail": "template.views",
         "documentation": {}
     }
