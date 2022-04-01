@@ -72,3 +72,47 @@ def preview_requete(request):
         'objet':objet,
         'description':description
     })
+
+
+
+def generer_requete(request, id):
+    template = Template.objects.get(pk = id)
+    first_name = template.first_name,
+    last_name = template.last_name,
+    ue = template.ue,
+    level = template.level,
+    mat = template.mat,
+    phone = template.phone,
+    date = template.date,
+    respo = template.respo,
+    objet = template.objet,
+    description = template.description
+
+    templates = get_template('generator.html')
+    context = {
+        'first_name':first_name, 
+        'last_name':last_name, 
+        'ue':ue, 
+        'level':level, 
+        'mat':mat, 
+        'phone':phone, 
+        'date':date, 
+        'respo':respo, 
+        'objet':objet,
+        'description':description
+    }
+    html = templates.render(context)
+    options = {
+        'page-size':'Letter',
+        'encoding':'UTF-8',
+    }
+    pdf = pdfkit.from_string(html, False, options)
+
+    reponse = HttpResponse(pdf, content_type='application/pdf')
+    reponse['Content-Disposition'] = 'attachment'
+    return reponse
+
+
+def download(request):
+    template = Template.objects.all()
+    return render(request, 'download.html', {'template':template})

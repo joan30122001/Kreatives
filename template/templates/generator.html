@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head{
+            display: flex;
+            justify-content: space-between;
+        }
+        .respo{
+            display: flex;
+            justify-content: space-between;
+        }
+        .objet{
+            display: flex;
+            justify-content: space-between;
+        }
+        .personel{
+            display: flex;
+            justify-content: space-between;
+        }
+        button span{
+            width: 100px;
+            height: 100px;
+        }
+        #bouton1{
+            width: 300px;
+            height: 60px;
+            border: 2px solid #a9c9ff;
+        }
+        #bouton1 span{
+            font-size: 25px;
+            letter-spacing: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <div class="head">
+            <div>
+                <p>Nom: <span id="tonDiv" contenteditable="false">{{ first_name }}</span></p>
+                <p>Prénom: <span id="tonDivs" contenteditable="false">{{ last_name }}</span></p>
+                <p>Filière: <span id="tonDivs1" contenteditable="false">{{ ue }}</span></p>
+                <p>Niveau: <span id="tonDivs2" contenteditable="false">{{ level }}</span></p>
+                <p>Matricule: <span id="tonDivs3" contenteditable="false">{{ mat }}</span></p>
+                <p>Téléphone: <span id="tonDivs4" contenteditable="false">{{ phone }}</span></p>
+            </div>
+            <div></div>
+            <div>
+                <p>date: Le, <span id="tonDivs5" contenteditable="false">{{ date }}</span></p>
+            </div>
+        </div>
+        <div class="respo">
+            <div></div>
+            <div></div>
+            <div>
+                <p>A <span id="tonDivs6" contenteditable="false">{{ respo }}</span></p>
+            </div>
+        </div>
+        <div class="objet">
+            <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">{{ objet }}</span></div>
+            
+            <div></div>
+        </div><br>
+        <div>
+            <div class="personel">
+                <div><p>Madame, Monsieur</p></div>
+                
+                <div></div>
+            </div>
+            <div id="contenu">
+                <p>
+                    {{ description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</body>

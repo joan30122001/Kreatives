@@ -654,7 +654,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n]",
+        "peekOfCode": "app_name = \"template\"\nurlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n    path('<int:id>', views.generer_requete, name='generer_requete'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -663,7 +663,7 @@
         "kind": 5,
         "importPath": "template.urls",
         "description": "template.urls",
-        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('template/',views.template, name='template'),\n    path('creer_requete/',views.creer_requete, name='creer_requete'),\n    path('operation_requete/',views.operation_requete, name='operation_requete'),\n    path('preview_requete/',views.preview_requete, name='preview_requete'),\n    path('<int:id>', views.generer_requete, name='generer_requete'),\n]",
         "detail": "template.urls",
         "documentation": {}
     },
@@ -700,6 +700,24 @@
         "importPath": "template.views",
         "description": "template.views",
         "peekOfCode": "def preview_requete(request):\n    templates = Template.objects.all()[:1]\n    for template in templates:\n        first_name = template.first_name,\n        last_name = template.last_name,\n        ue = template.ue,\n        level = template.level,\n        mat = template.mat,\n        phone = template.phone,\n        date = template.date,",
+        "detail": "template.views",
+        "documentation": {}
+    },
+    {
+        "label": "generer_requete",
+        "kind": 2,
+        "importPath": "template.views",
+        "description": "template.views",
+        "peekOfCode": "def generer_requete(request, id):\n    template = Template.objects.get(pk = id)\n    first_name = template.first_name,\n    last_name = template.last_name,\n    ue = template.ue,\n    level = template.level,\n    mat = template.mat,\n    phone = template.phone,\n    date = template.date,\n    respo = template.respo,",
+        "detail": "template.views",
+        "documentation": {}
+    },
+    {
+        "label": "download",
+        "kind": 2,
+        "importPath": "template.views",
+        "description": "template.views",
+        "peekOfCode": "def download(request):\n    template = Template.objects.all()\n    return render(request, 'download.html', {'template':template})",
         "detail": "template.views",
         "documentation": {}
     }
