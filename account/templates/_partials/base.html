@@ -65,6 +65,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <img style="width: 20px" src="{% static 'img/bell.png' %}">
+                                </a>
+                            </li>
                         {% else %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'register' %}">Register</a>
@@ -123,6 +128,11 @@
                         {% if user.is_authenticated%}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <img style="width: 20px" src="{% static 'img/bell.png' %}">
+                                </a>
                             </li>
                         {% else %}
                             <li class="nav-item">
