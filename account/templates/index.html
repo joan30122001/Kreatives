@@ -8,7 +8,28 @@
 
 {% block content %}
     {% if user.is_responsible %}
-        <h1>Welcome</h1>
+    <section class="r-banners">
+        <div class="first-home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="banner-caption">
+                            <div class="line-dec"></div>
+                            <h2>Gestion de Responsables</h2>
+                            <span>Ici un responsable pourra recevoir la requête d'un étudiant via EMAIL la traiter et renvoyer des notifications à ce dernier dans un cas de requête non conforme ou requête terminer et permettre à l'étudiant de pouvoir suivre le parcourt de sa requête.</span>
+                            <div class="blue-button">
+                                <a class="scrollTo" data-scrollTo="popular" href="#">
+                                    <button class="btns">
+                                        Get Started
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
         {% comment %} {% if user.is_authenticated%}
             <a href="{% url 'logout' %}">Logout</a> <br>
@@ -17,7 +38,28 @@
             <a href="{% url 'login' %}">Login</a> 
         {% endif %} {% endcomment %}
     {% elif user.is_student %}
-        <h1>Bienvenue</h1>
+    <section class="banners">
+        <div class="first-home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="banner-caption">
+                            <div class="line-dec"></div>
+                            <h2>Gestion d'Etudiants</h2>
+                            <span>Ici l'étudiant sera capable de remplir sa requête via un template, enregistrer, avoir un apperçu de la requête, générer le PDF et l'envoyer au responsable pour la suite des opérations.</span>
+                            <div class="blue-button">
+                                <a class="scrollTo" data-scrollTo="popular" href="{% url 'template:template' %}">
+                                    <button class="btns">
+                                        Get Started
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         {% comment %} {% if user.is_authenticated%}
             <a href="{% url 'logout' %}">Logout</a> <br>
         {% else %}

@@ -1,3 +1,4 @@
+/* Home principal */
 .banner .banner-caption {
     padding: 100px 0px;
   }
@@ -34,15 +35,134 @@ padding: 15px;
 .btns{
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     color: white;
     background-color: #4883ff;
     border: none;
+}
+.btns:after{
+    position: absolute;
 }
 .btns:hover{
     border: 2px solid #4883ff;
     background-color: white;
     color: #4883ff;
-    transition: 1s
+    transition: 1s;
+}
+
+
+
+
+
+
+/* Home pour étudiant */
+.banners .banner-caption {
+    padding: 160px 0px;
+  }
+  
+.banners .banner-caption .line-dec {
+width: 80px;
+height: 4px;
+background-color: #4883ff;
+}
+
+.banners .banner-caption h2 {
+margin-top: 20px;
+margin-bottom: 20px;
+font-size: 42px;
+letter-spacing: 0.5px;
+color: #111;
+}
+
+.banners .banner-caption span {
+font-size: 22px;
+color: #111;
+letter-spacing: 0.5px;
+}
+
+.banners .banner-caption .blue-button {
+margin-top: 30px;
+}
+
+.banners .submit-form {
+border-bottom: 5px solid #4883ff;
+background-color: #111;
+padding: 15px;
+}
+.btns{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    background-color: #4883ff;
+    border: none;
+}
+.btns:after{
+    position: absolute;
+}
+.btns:hover{
+    border: 2px solid #4883ff;
+    background-color: white;
+    color: #4883ff;
+    transition: 1s;
+}
+
+
+
+
+
+
+/* Home pour responsable */
+.r-banners .banner-caption {
+    padding: 170px 0px;
+  }
+  
+.r-banners .banner-caption .line-dec {
+width: 80px;
+height: 4px;
+background-color: #4883ff;
+}
+
+.r-banners .banner-caption h2 {
+margin-top: 20px;
+margin-bottom: 20px;
+font-size: 42px;
+letter-spacing: 0.5px;
+color: #111;
+}
+
+.r-banners .banner-caption span {
+font-size: 22px;
+color: #111;
+letter-spacing: 0.5px;
+}
+
+.r-banners .banner-caption .blue-button {
+margin-top: 30px;
+}
+
+.r-banners .submit-form {
+border-bottom: 5px solid #4883ff;
+background-color: #111;
+padding: 15px;
+}
+.btns{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: white;
+    background-color: #4883ff;
+    border: none;
+}
+.btns:after{
+    position: absolute;
+}
+.btns:hover{
+    border: 2px solid #4883ff;
+    background-color: white;
+    color: #4883ff;
+    transition: 1s;
 }
