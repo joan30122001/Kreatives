@@ -9,8 +9,17 @@ from .models import User
 def index(request):
     return render(request, 'index.html')
 
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
+
+
 def register(request):
     return render(request, 'register.html')
+
+
 
 class student_register(CreateView):
     model = User

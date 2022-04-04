@@ -25,11 +25,27 @@
             <a href="{% url 'login' %}">Login</a> 
         {% endif %} {% endcomment %}
     {% else %}
-        <div class="first-home">
-            <div class="content">
-                <h2> Gestion de Requêtes </h2>
-                <h2> Gestion de Requêtes </h2>
+        <section class="banner">
+            <div class="first-home">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="banner-caption">
+                                <div class="line-dec"></div>
+                                <h2>Gestion des Requêtes au sein de l'Université de Yaoundé 1</h2>
+                                <span>Cette application es conçu dans le but de faciliter la gestion des requêtes par les étudiants et les enseignants dans la mesure ou un étudiant ne devrait plus prendre un format pour rediger. Il va maintenant juste falloir se connecter à l' application choisir son template de requête puis remplir sa requête et pouvoir suivre le parcour de sa requête du moment il l'aura envoyé à l'enseignant.</span>
+                                <div class="blue-button">
+                                    <a class="scrollTo" data-scrollTo="popular" href="#">
+                                        <button class="btns">
+                                            Discover More
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     {% endif %}
 {% endblock content %}

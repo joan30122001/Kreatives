@@ -453,7 +453,16 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def index(request):\n    return render(request, 'index.html')\ndef register(request):\n    return render(request, 'register.html')\nclass student_register(CreateView):\n    model = User\n    form_class = StudentSignUpForm\n    template_name = 'student_register.html'\n    def form_valid(self, form):\n        user = form.save()",
+        "peekOfCode": "def index(request):\n    return render(request, 'index.html')\ndef contact(request):\n    return render(request, 'contact.html')\ndef register(request):\n    return render(request, 'register.html')\nclass student_register(CreateView):\n    model = User\n    form_class = StudentSignUpForm\n    template_name = 'student_register.html'",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "contact",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def contact(request):\n    return render(request, 'contact.html')\ndef register(request):\n    return render(request, 'register.html')\nclass student_register(CreateView):\n    model = User\n    form_class = StudentSignUpForm\n    template_name = 'student_register.html'\n    def form_valid(self, form):\n        user = form.save()",
         "detail": "account.views",
         "documentation": {}
     },

@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#services">Services</a>
@@ -58,9 +58,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#blog">Blog</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
                         {% if user.is_authenticated%}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -79,7 +76,7 @@
                             </li>
                         {% endif %}
                     </ul>
-                    <button class="btn btn-primary ms-lg-3">Join Us</button>
+                    <button class="btn btn-primary ms-lg-3">Contact Us</button>
                 </div>
             </div>
         </nav><!-- //NAVBAR -->
@@ -96,7 +93,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
                         {% comment %} <li class="nav-item">
                             <a class="nav-link" href="#services">Services</a>
@@ -122,9 +119,6 @@
                         {% comment %} <li class="nav-item">
                             <a class="nav-link" href="#blog">Blog</a>
                         </li> {% endcomment %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
                         {% if user.is_authenticated%}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
@@ -143,7 +137,9 @@
                             </li>
                         {% endif %}
                     </ul>
-                    <button class="btn btn-primary ms-lg-3">Join Us</button>
+                    <a class="nav-link" href="{% url 'contact' %}">
+                        <button class="btn btn-primary ms-lg-3">Contact Us</button>
+                    </a>
                 </div>
             </div>
         </nav><!-- //NAVBAR -->
@@ -160,7 +156,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home">Home</a>
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
                         {% comment %} <li class="nav-item">
                             <a class="nav-link" href="#services">Services</a>
@@ -196,7 +192,7 @@
                         </li>
                         {% comment %} {% endif %} {% endcomment %}
                     </ul>
-                    <button class="btn btn-primary ms-lg-3">Join Us</button>
+                    <button class="btn btn-primary ms-lg-3">Contact Us</button>
                 </div>
             </div>
         </nav><!-- //NAVBAR -->

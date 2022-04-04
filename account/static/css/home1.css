@@ -1,54 +1,48 @@
-/* Home Home */
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins', sans-serif;
+.banner .banner-caption {
+    padding: 100px 0px;
+  }
+  
+.banner .banner-caption .line-dec {
+width: 80px;
+height: 4px;
+background-color: #4883ff;
 }
 
-.first-home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    background-color: #000;
-    opacity: 0.4;
-    background-image: url('/static/img/request1.png');
-    background-repeat:no-repeat;
-    background-position: center;
+.banner .banner-caption h2 {
+margin-top: 20px;
+margin-bottom: 20px;
+font-size: 42px;
+letter-spacing: 0.5px;
+color: #111;
 }
 
-.content{
-    position: relative;
+.banner .banner-caption span {
+font-size: 22px;
+color: #111;
+letter-spacing: 0.5px;
 }
 
-/* h2{
-    width: 1200px;
-} */
-
-.content h2{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    font-size: 7em;
-    width: 1200px;
+.banner .banner-caption .blue-button {
+margin-top: 30px;
 }
 
-.content h2:nth-child(1){
-    color: transparent;
-    -webkit-text-stroke: 2px #03a9f4
+.banner .submit-form {
+border-bottom: 5px solid #4883ff;
+background-color: #111;
+padding: 15px;
 }
-
-.content h2:nth-child(2){
-    color: #03a9f4;
-    animation: animate 4s ease-in-out infinite;
+.btns{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+    background-color: #4883ff;
+    border: none;
 }
-
-@keyframes animate{
-    0%,100%{
-        clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%)
-    }
-    50%{
-        clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
-    }
+.btns:hover{
+    border: 2px solid #4883ff;
+    background-color: white;
+    color: #4883ff;
+    transition: 1s
 }
