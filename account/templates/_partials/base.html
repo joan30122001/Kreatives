@@ -41,32 +41,30 @@
                             <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#features">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#pricing">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team">Team</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#blog">Blog</a>
                         </li>
                         {% if user.is_authenticated%}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <img style="width: 20px" src="{% static 'img/bell.png' %}">
-                                </a>
-                            </li>
+                            <div class="popover__wrapper">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <img style="width: 25px; border: 1px solid #0d6efd; padding: 5px; border-radius: 3px" src="{% static 'img/bell.png' %}">
+                                    </a>
+                                    <div class="popover__content">
+                                        <h6 style="color: #0d6efd"> Notifications</h6>
+                                        <hr>
+                                        <p class="popover__message">
+                                            Vous venez de recevoir la requête d'un étudiant. Veillez la conculter...
+                                        </p>
+                                        <hr>
+                                        <p class="popover__message">
+                                            Vous venez de recevoir la requête d'un étudiant. Veillez la conculter...
+                                        </p>
+                                    </div>
+                                </li>
+                            </div>
                         {% else %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'register' %}">Register</a>
@@ -123,11 +121,24 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <img style="width: 20px" src="{% static 'img/bell.png' %}">
-                                </a>
-                            </li>
+                            <div class="popover__wrapper">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <img style="width: 25px; border: 1px solid #0d6efd; padding: 5px; border-radius: 3px" src="{% static 'img/bell.png' %}">
+                                    </a>
+                                    <div class="popover__content">
+                                        <h6 style="color: #0d6efd"> Notifications</h6>
+                                        <hr>
+                                        <p class="popover__message">
+                                            Vous venez de recevoir la requête d'un étudiant. Veillez la conculter...
+                                        </p>
+                                        <hr>
+                                        <p class="popover__message">
+                                            Vous venez de recevoir la requête d'un étudiant. Veillez la conculter...
+                                        </p>
+                                    </div>
+                                </li>
+                            </div>
                         {% else %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'register' %}">Register</a>
