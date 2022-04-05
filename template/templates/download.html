@@ -29,6 +29,7 @@
         <table class="table table-bordered table-striped mb-0">
             <thead>
                 <th scope="col">OBJETS</th>
+                <th scope="col">DATE</th>
                 <th scope="col">FICHIERS</th>
             </tr>
             </thead>
@@ -37,6 +38,7 @@
             {% for element in template %}
                 <tr>
                     <td>{{ element.objet }}</td>
+                    <td>{{ element.date }}</td>
                     <td style="width: 400px"><a href="{{ element.id }}" style="width: 385px; font-size: 15px" class="btn btn-primary">Telecharger le PDF</a></td>
                 </tr>
             {% endfor %}
