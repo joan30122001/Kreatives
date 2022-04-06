@@ -11,12 +11,12 @@
             {% csrf_token %}
             <div class="head">
                 <div>
-                    <p>Nom: <span id="tonDiv" contenteditable="false">XXXXXX</span></p>
-                    <p>Prénom: <span id="tonDivs" contenteditable="false">XXXXXX</span></p>
+                    <p>Nom: <span id="tonDiv" contenteditable="false">{{ user.first_name }}</span></p>
+                    <p>Prénom: <span id="tonDivs" contenteditable="false">{{ user.last_name }}</span></p>
                     <p>Filière: <span id="tonDivs1" contenteditable="false">XXXXXX</span></p>
                     <p>Niveau: <span id="tonDivs2" contenteditable="false">XXXXXX</span></p>
-                    <p>Matricule: <span id="tonDivs3" contenteditable="false">XXXXXX</span></p>
-                    <p>Téléphone: <span id="tonDivs4" contenteditable="false">XXXXXX</span></p>
+                    <p>Matricule: <span id="tonDivs3" contenteditable="false">{{ user.student.matricule }}</span></p>
+                    <p>Téléphone: <span id="tonDivs4" contenteditable="false">{{ user.student.phone_number }}</span></p>
                 </div>
                 <div></div>
                 <div>
