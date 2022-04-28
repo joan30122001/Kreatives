@@ -7,45 +7,45 @@
 
 
 {% block content %}
-    <div class="contain">
-        <div class="head">
-            <div>
-                <p>Nom: <span id="tonDiv" contenteditable="false">{{ first_name }}</span></p>
-                <p>Prénom: <span id="tonDivs" contenteditable="false">{{ last_name }}</span></p>
-                <p>Filière: <span id="tonDivs1" contenteditable="false">{{ ue }}</span></p>
-                <p>Niveau: <span id="tonDivs2" contenteditable="false">{{ level }}</span></p>
-                <p>Matricule: <span id="tonDivs3" contenteditable="false">{{ mat }}</span></p>
-                <p>Téléphone: <span id="tonDivs4" contenteditable="false">{{ phone }}</span></p>
+        <div class="contain">
+            <div class="head">
+                <div>
+                    <p>Nom: <span id="tonDiv" contenteditable="false">{{ first_name }}</span></p>
+                    <p>Prénom: <span id="tonDivs" contenteditable="false">{{ last_name }}</span></p>
+                    <p>Filière: <span id="tonDivs1" contenteditable="false">{{ ue }}</span></p>
+                    <p>Niveau: <span id="tonDivs2" contenteditable="false">{{ level }}</span></p>
+                    <p>Matricule: <span id="tonDivs3" contenteditable="false">{{ mat }}</span></p>
+                    <p>Téléphone: <span id="tonDivs4" contenteditable="false">{{ phone }}</span></p>
+                </div>
+                <div></div>
+                <div>
+                    <p>date: Le, <span id="tonDivs5" contenteditable="false">{{ date }}</span></p>
+                </div>
             </div>
-            <div></div>
-            <div>
-                <p>date: Le, <span id="tonDivs5" contenteditable="false">{{ date }}</span></p>
+            <div class="respo">
+                <div></div>
+                <div></div>
+                <div>
+                    <p>A <span id="tonDivs6" contenteditable="false">{{ respo }}</span></p>
+                </div>
             </div>
-        </div>
-        <div class="respo">
-            <div></div>
-            <div></div>
-            <div>
-                <p>A <span id="tonDivs6" contenteditable="false">{{ respo }}</span></p>
-            </div>
-        </div>
-        <div class="objet">
-            <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">{{ objet }}</span></div>
-            
-            <div></div>
-        </div><br>
-        <div>
-            <div class="personel">
-                <div><p>Madame, Monsieur</p></div>
+            <div class="objet">
+                <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">{{ objet }}</span></div>
                 
                 <div></div>
-            </div>
-            <div id="contenu">
-                <p>
-                    {{ description }}
-                </p>
+            </div><br>
+            <div>
+                <div class="personel">
+                    <div><p>Madame, Monsieur</p></div>
+                    
+                    <div></div>
+                </div>
+                <div id="contenu">
+                    <p>
+                        {{ description }}
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-
+    
 {% endblock content %}

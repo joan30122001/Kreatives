@@ -1,5 +1,6 @@
 {% extends '_partials/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block stylepage %}
     <link rel="stylesheet" href="{% static 'css/requete.css' %}">
@@ -7,31 +8,60 @@
 
 
 {% block content %}
+<br><br>
+        
         <div class="container" >
             {% csrf_token %}
             <div class="head">
                 <div>
                     <p>Nom: <span id="tonDiv" contenteditable="false">{{ user.first_name }}</span></p>
+                    {% comment %} <p>Nom: <span  contenteditable="false">{{ user.first_name }}</span></p> {% endcomment %}
                     <p>Prénom: <span id="tonDivs" contenteditable="false">{{ user.last_name }}</span></p>
-                    <p>Filière: <span id="tonDivs1" contenteditable="false">XXXXXX</span></p>
-                    <p>Niveau: <span id="tonDivs2" contenteditable="false">XXXXXX</span></p>
+                    {% comment %} <p>Prénom: <span  contenteditable="false">{{ user.last_name }}</span></p> {% endcomment %}
+                    <p>Filière: <span id="tonDivs1" contenteditable="false">
+                        {% if user.student.filiere == "2" %}Maths{% endif %}
+                        {% if user.student.filiere == "1" %}Info{% endif %}
+                        {% if user.student.filiere == "3" %}Physique{% endif %}
+                        {% if user.student.filiere == "4" %}Chimie{% endif %}
+                        {% if user.student.filiere == "5" %}BioSciences{% endif %}
+                        {% if user.student.filiere == "6" %}GeoSciences{% endif %}
+                    </span></p>
+                    <p>Niveau: <span id="tonDivs2" contenteditable="false">
+                        {% if user.student.niveau == "2" %}L1{% endif %}
+                        {% if user.student.niveau == "1" %}L2{% endif %}
+                        {% if user.student.niveau == "3" %}L3{% endif %}
+                        {% if user.student.niveau == "4" %}M1{% endif %}
+                        {% if user.student.niveau == "5" %}M2{% endif %}
+                    </span></p>
                     <p>Matricule: <span id="tonDivs3" contenteditable="false">{{ user.student.matricule }}</span></p>
+                    {% comment %} <p>Matricule: <span  contenteditable="false">{{ user.student.matricule }}</span></p> {% endcomment %}
                     <p>Téléphone: <span id="tonDivs4" contenteditable="false">{{ user.student.phone_number }}</span></p>
+                    {% comment %} <p>Téléphone: <span  contenteditable="false">{{ user.student.phone_number }}</span></p> {% endcomment %}
                 </div>
                 <div></div>
                 <div>
-                    <p>date: Le, <span id="tonDivs5" contenteditable="false">XXXXX XXXXX XXXX</span></p>
+                    {% language 'fr' %}
+                        <p>date: Le, <span id="tonDivs5" contenteditable="false">{{current_date}}</span></p>
+                    {% endlanguage %}
                 </div>
             </div>
             <div class="respo">
                 <div></div>
                 <div></div>
                 <div>
-                    <p>A <span id="tonDivs6" contenteditable="false">XXXXXXXXXX</span></p>
+                    <p>A <span id="tonDivs6" contenteditable="false">XXXXXXXXXX
+                        {% comment %} <select style="border: none; background-color: white;">XXXXXXXXXX
+                            <option>XXXXXXXXXX</option>
+                            <option>Dr. Messi</option>
+                            <option>Dr. Monthe</option>
+                            <option>M. Kouokam</option>
+                            <option>Mme Kimbi</option>
+                        </select> {% endcomment %}
+                    </span></p>
                 </div>
             </div>
             <div class="objet">
-                <div><span style="text-decoration: underline">Objet</span>: <span id="tonDivs7" contenteditable="false">XXXXXXXXXXXXXXXXXXXX</span></div>
+                <div><span style="text-decoration: underline; font-weight: bold">Objet</span>: <span>Rectification de note dans l'Unité d'enseignement </span><span id="tonDivs7" contenteditable="false">nom UE</span></div>
                 
                 <div></div>
             </div><br>
@@ -58,27 +88,65 @@
                 </div>
             </div>
             <br><br>
-            <button id="bouton1">
-                <span style="color:red;">Editer</span>/<span style="color:blue;">Figer</span>
-            </button>
-            {% comment %} <button id="btna" class="btn btn-primary">Enregistrer</button> {% endcomment %}
-            <input id="fetch-call" type="submit" value="Enregistrer">
+            <div  style="display: flex; justify-content: space-between">
+                <div>
+                    <button id="bouton1">
+                        <span style="color:red;">Editer</span>/<span style="color:blue;">Figer</span>
+                    </button>
+                </div>
+                <div>
+                    {% comment %} <button id="btna" class="btn btn-primary">Enregistrer</button> {% endcomment %}
+                    <input style="padding: 15px; top: -5px" id="fetch-call" type="submit" value="Enregistrer">
+                </div>
+            </div>
         </div>
         {% comment %} <p id="operation">
 
 </p> {% endcomment %}
         {% comment %} <button id="btna" class="btn btn-primary">Enregistrer</button> {% endcomment %}
-    <br><br>
+    <br><br><br>
+    <div style="display: flex; justify-content: space-between">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2 style="text-align: center">Send Email</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Subject:</label>
+                    <input style="height: 50px" type="text" name="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email:</label>
+                    <input style="height: 50px" type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Message:</label>
+                    <input style="height: 50px" type="text" name="message" class="form-control" required>
+                </div>
+                
+                <br>
+                <button  type="submit" class="btn btn-primary col-md-12">Send</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br>
+
     <script>
         var tab=new Array();
-        tab[0]="#tonDiv";
-        tab[1]="#tonDivs";
-        tab[2]="#tonDivs1";
-        tab[3]="#tonDivs2";
-        tab[4]="#tonDivs3";
+        /*tab[0]="#tonDiv";
+        tab[1]="#tonDivs";*/
+
+        /* A remettre*/
+        /*tab[2]="#tonDivs1";
+        tab[3]="#tonDivs2";*/
+
+        /*tab[4]="#tonDivs3";
         tab[5]="#tonDivs4";
-        tab[6]="#tonDivs5";
-        tab[7]="#tonDivs6";
+        tab[6]="#tonDivs5";*/
+
+        /*A remattre*/
+        /*tab[7]="#tonDivs6";
         tab[8]="#tonDivs7";
         tab[9]="#tonDivs8";
         tab[10]="#tonDivs9";
@@ -87,6 +155,19 @@
         tab[13]="#tonDivs12";
         tab[14]="#tonDivs13";
         tab[15]="#tonDivs14";
+        tab[0]="#tonDivs1";
+        tab[0]="#tonDivs2";*/
+
+        
+        tab[0]="#tonDivs6";
+        tab[1]="#tonDivs7";
+        tab[2]="#tonDivs8";
+        tab[3]="#tonDivs9";
+        tab[4]="#tonDivs10";
+        tab[5]="#tonDivs11";
+        tab[6]="#tonDivs12";
+        tab[7]="#tonDivs13";
+        tab[8]="#tonDivs14";
         var length = tab.length;
 
         document.querySelector("#bouton1").onclick = function() {

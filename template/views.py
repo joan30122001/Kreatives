@@ -6,7 +6,11 @@ from  . import models
 import pdfkit
 from django.template.loader import get_template
 from django.http.response import HttpResponse
+from django.conf import settings
+from django.core.mail import send_mail
 import io
+import datetime
+from twilio.rest import Client
 
 
 def template(request):
@@ -15,7 +19,16 @@ def template(request):
 
 
 def creer_requete(request):
-    return render(request, 'creer-requete.html')
+
+    if request.method == 'POST':
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        email = request.POST.get('email')
+        send_mail(subject, message, settings.EMAIL_HOST_USER, [email], fail_silently=False)
+        return render(request, 'email_sent.html', {'email':email})
+
+    currentdate = datetime.date.today()
+    return render(request, 'creer-requete.html', {'current_date':currentdate})
 
 
 
@@ -44,6 +57,17 @@ def operation_requete(request):
         objet = i,
         description = j
     )
+    account_sid = 'AC25fffecc0550d63d0eb20cd5793236b3'
+    auth_token = '4d01a37db834e77914780908a65492dc'
+    client = Client(account_sid, auth_token)
+
+    message = client.messages.create(
+        body=f"Votre a bien été enregistré et envoyé",
+        from_='+19378264862',
+        to='+237697161353'
+    )
+
+    print(message.sid)
 
     return JsonResponse({"operation_result": f"{template.first_name} - {template.last_name} - {template.ue} - {template.level} - {template.mat} - {template.phone} - {template.date} - {template.respo} - {template.objet} - {template.description}"})
 
